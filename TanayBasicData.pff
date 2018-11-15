@@ -1,0 +1,18 @@
+﻿[Run Information]
+Version=CSPro 7.1
+AppType=Entry
+
+[DataEntryInit]
+Interactive=Ask
+
+[Files]
+Application=.\TanayBasicData.ent
+InputData=.\Data\Population.csdb|CSPRODB
+
+[ExternalFiles]
+COUNTRY_DICT=.\Data\Country.dat
+GEOCODE_DICT=.\sample\Geocode.csdb|CSPRODB
+GEO_DICT=.\Data\Geocode3.csdb|CSPRODB
+
+[Parameters]
+

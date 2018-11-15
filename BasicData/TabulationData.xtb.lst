@@ -1,0 +1,84 @@
+﻿Application     C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\TabulationData.xtb
+Type            Tab
+Input Data      <<CSPro DB>> C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\Data\Inhabitants.csdb                                                                                                                                                                                                            
+Output          C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\Inhabitants.csdb.tab
+
+Date            Nov 13, 2018
+Start Time      08:20:36
+End Time        08:20:36
+
+CSPRO Process Summary
+          +-----------------------------------------------------+
+          |       0 Records Read ( 100% of input file)          |
+          |       0 Ignored (       0 unknown,        0 erased) |
+          |       0 Messages (       0 U,       0 W,       0 E) |
+          +---------+--------------+--------------+-------------+
+          |  Level  |  Input Case  |  Bad Struct  |  Level Post |
+          +---------+--------------+--------------+-------------+
+          |     1   |          0   |          0   |          0  |
+          +---------+--------------+--------------+-------------+                                                     
+                                                                                
+                                                                                
+                                                                                
+
+Process Messages
+
+CSPRO Executor Normal End
+--------------------------------------------------------------------------------
+Application     C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\TabulationData.xtb
+Type            Consolidate
+Input Data      C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\Inhabitants.csdb.tab
+Output          C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\Inhabitants.csdb.con.tab
+
+Date            Nov 13,2018
+Start Time      08:20:36
+End Time        08:20:36
+End Time        08:20:37
+
+CSPro Process Summary
+          +----------------------------------------------+
+          |         2 Slices Read ( 100% of Input file)  |
+          +----------------------------------------------+
+
+
+Process Messages
+
+BI_REGIO BI_PROVI BI_MUNIC BI_BARAN Table Names
+-------- -------- -------- -------- -----------
+                                    TABLE1
+
+CSPRO Executor Normal End
+--------------------------------------------------------------------------------
+Application     C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\TabulationData.xtb
+Type            Format
+Input Data      C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\Inhabitants.csdb.con.tab
+Output          C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\TabulationData.xtb.tbw
+
+Date            Nov 13, 2018
+Start Time      08:20:37
+End Time        08:20:37
+
+CSPRO Process Summary
+          +-----------------------------------------------------+
+          |       0 Slices  Read (  50% of input file)          |
+          |       1 Ignored (       1 unknown,        0 erased) |
+          |       1 Messages (       0 U,       0 W,       1 E) |
+          +-----------------------------------------------------+
+                                                                         
+
+Process Messages
+
+*** Loading Break '￻         ' has 1 messages (1 E / 0 W / 0U)        
+    E  2302 Invalid slice for table 'TABLE1' in file 'C:\Users\Cristina\Dropbox 
+            (Old)\TanayLMIS\LMIS\TanayBasicData\BasicData\Inhabitants.csdb.con.tab'. 
+            The table data will be set to zero 
+
+System messages:
+
+ Number    Frequency   Message text
+ ------    ---------   ------------
+    692            1   Tbi file '%s' contains an invalid table number (%
+   2302            1   Invalid slice %s for table '%s' in file '%s'. The
+
+CSPRO Executor Normal End
+--------------------------------------------------------------------------------
