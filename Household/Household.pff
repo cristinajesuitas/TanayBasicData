@@ -1,0 +1,29 @@
+﻿[Run Information]
+Version=CSPro 7.1
+AppType=Entry
+Description=Tanay Basic Data census Household Questionnaire
+[DataEntryInit]
+FullScreen=Yes
+StartMode=Add;0458120170011  0001
+Lock=CaseListing
+ShowInApplicationListing=Never
+[Files]
+Application=Household.ent
+InputData=C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\Data\Population.csdb
+[Parameters]
+OnExit=../Menu/Menu.pff
+Region=04
+Province=58
+Municipal=12
+Barangay=017
+EA=001
+Segment=1  
+HouseholdNumber=0001
+RegionName=REGION IV-A (CALABARZON)
+ProvinceName=RIZAL
+MunicipalName=TANAY
+BarangayName=Tabing Ilog (Pob.)
+EAName=EA001
+InterviewerCode=23828ddc-46ca-4805-b976-e84dba40bdc8
+SupervisorCode=85fec361-fd35-4f04-99ea-ce311a078ff7
+StaffName=KSPJ

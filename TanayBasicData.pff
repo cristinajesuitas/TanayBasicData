@@ -11,6 +11,7 @@ InputData=.\Data\Population.csdb|CSPRODB
 
 [ExternalFiles]
 COUNTRY_DICT=.\Data\Country.dat
+ETHIC_DICT=.\Data\Ethnicity.csdb|CSPRODB
 GEOCODE_DICT=.\sample\Geocode.csdb|CSPRODB
 GEO_DICT=.\Data\Geocode3.csdb|CSPRODB
 

@@ -103,7 +103,7 @@ Label=Inhabitant record
 Name=INHABITANT_REC
 RecordTypeValue='B'
 MaxRecords=10
-RecordLen=276
+RecordLen=370
 
 [Item]
 Label=Name
@@ -443,24 +443,32 @@ Label=Sex
 Name=BI_SEX_VS
 Value=1;Male
 Value=2;Female
-Value=3
+Value=3;Sex Ratio
 
 [Item]
 Label=Nationality
 Name=BI_NATIONALITY
 Start=261
-Len=3
+Len=1
 ZeroFill=Yes
 
 [ValueSet]
 Label=Nationality
 Name=BI_NATIONALITY_VS1
 Value=1;Filipino
+Value=2;Other, please specify
+
+[Item]
+Label=Other Nationality
+Name=BI_OTHER_NATIONALITY
+Start=262
+Len=25
+DataType=Alpha
 
 [Item]
 Label=Civil Status
 Name=BI_CIVIL_STATUS
-Start=264
+Start=287
 Len=1
 
 [ValueSet]
@@ -476,37 +484,67 @@ Value=6;Unknown
 [Item]
 Label=Religion
 Name=BI_RELIGION
-Start=265
-Len=3
+Start=288
+Len=25
+DataType=Alpha
 
 [Item]
-Label=Ethinicity
-Name=BI_ETHINICITY
-Start=268
-Len=1
+Label=Ethnicity
+Name=BI_ETHNICITY
+Start=313
+Len=25
+DataType=Alpha
 
 [Item]
 Label=Highest Level of Education Completed
 Name=BI_EDUCATION
-Start=269
+Start=338
 Len=2
+
+[ValueSet]
+Label=Highest Level of Education Completed
+Name=BI_EDUCATION_VS
+Value=0;No education
+Value=1;Pre-school
+Value=2;Elementary Level
+Value=3;Elementary Graduate
+Value=4;High school level
+Value=5;High school graduate
+Value=6;Junior Highschool
+Value=7;Junior Higschool graduate
+Value=8;Senior highschool level
+Value=9;Senior highschool graduate
+Value=10;Vocational/Tech
+Value=11;College level
+Value=12;College graduate
+Value=13;Post-graduate
 
 [Item]
 Label=Occupation
 Name=BI_OCCUPATION
-Start=271
-Len=2
+Start=340
+Len=25
+DataType=Alpha
 
 [Item]
 Label=Disability
 Name=BI_DISABILITY
-Start=273
-Len=1
+Start=365
+Len=3
+DataType=Alpha
+
+[ValueSet]
+Label=Disability
+Name=BI_DISABILITY_VS1
+Value='A  ';Mental impairment
+Value='B  ';Physical Impairment
+Value='C  ';Sensory impairment
+Value='D  ';Not applicable
 
 [Item]
 Label=Relationship to Household
 Name=BI_RELATIONSHIP
-Start=274
+Start=368
 Len=2
 ZeroFill=Yes
 
@@ -575,7 +613,7 @@ Value=22;Domestic Helper
 [Item]
 Label=Add Household Member
 Name=ADD_HOUSEHOLD_MEMBER
-Start=276
+Start=370
 Len=1
 
 [ValueSet]

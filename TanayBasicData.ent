@@ -6,7 +6,6 @@ AppType=DataEntry
 OperatorID=No
 PartialSave=Yes
 AutoPartialSaveMinutes=5
-ValidateAlphaFields=Yes
 CAPI=Yes
 CAPIFont1=-016 0000 0000 0000 0400 0000 0000 0000 0000 0000 0000 0000 0000 Arial
 CAPIFont2=-016 0000 0000 0000 0400 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -31,7 +30,7 @@ ParadataCollectEvent=note_event
 ParadataCollectEvent=operator_selection_event
 ParadataCollectEvent=property_event
 [External Dictionaries]
-File=.\sample\Geocode.dcf
+File=.\Dictionary\Geocode\Geocode.dcf
 File=.\Dictionary\Country\Country.dcf
 [AppCode]
 File=.\TanayBasicData.ent.apc
@@ -44,7 +43,7 @@ File=.\TanayBasicData.fmf
 [Dictionary Types]
 Dict-Type=.\BasicData\Inhabitant.dcf,Input,.\TanayBasicData.fmf
 Dict-Type=.\Dictionary\Country\Country.dcf,External
-Dict-Type=.\sample\Geocode.dcf,External
+Dict-Type=.\Dictionary\Geocode\Geocode.dcf,External
 [Sync]
 Server=Dropbox
 Direction=Put

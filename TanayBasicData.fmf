@@ -77,10 +77,11 @@ Item=BI_SITIO_NAME
 Item=BI_SUBDIVISION_NAME
 Item=BI_UNIT_NO
 Item=BI_RELIGION
-Item=BI_ETHINICITY
+Item=BI_ETHNICITY
 Item=BI_EDUCATION
 Item=BI_DISABILITY
 Item=BI_CLASS000
+Item=BI_OTHER_NATIONALITY
   
 Box=29,2,988,64,Raised
 Box=30,65,989,553,Raised
@@ -330,7 +331,7 @@ Mirror=Yes
 Form=2
   
 [Text]
-Position=506,101,543,117
+Position=506,101,539,117
 Text=Class
  
   
@@ -548,14 +549,13 @@ Name=BI_DATE_OF_BIRTH
 Position=229,261,342,281
 Item=BI_DATE_OF_BIRTH,INHABITANT_DICT
 UseEnterKey=Yes
-FieldLabelType=DictionaryLabel
 DataCaptureType=Date
 CaptureDateFormat=MMDDYYYY
 Form=2
   
 [Text]
-Position=43,264,122,280
-Text=Date of Birth
+Position=43,264,202,280
+Text=Date of Birth (mmddyyyy)
  
   
 [Field]
@@ -654,7 +654,7 @@ Text=Sex
   
 [Field]
 Name=BI_NATIONALITY
-Position=232,413,275,433
+Position=387,387,402,407
 Item=BI_NATIONALITY,INHABITANT_DICT
 UseEnterKey=Yes
 FieldLabelType=DictionaryLabel
@@ -662,13 +662,27 @@ DataCaptureType=DropDown
 Form=2
   
 [Text]
-Position=44,424,112,440
+Position=295,391,363,407
 Text=Nationality
  
   
 [Field]
+Name=BI_OTHER_NATIONALITY
+Position=518,386,728,406
+Item=BI_OTHER_NATIONALITY,INHABITANT_DICT
+UseEnterKey=Yes
+UpperCase=Yes
+UseUnicodeTextBox=Yes
+Form=2
+  
+[Text]
+Position=415,391,506,407
+Text=Please specify
+ 
+  
+[Field]
 Name=BI_CIVIL_STATUS
-Position=233,441,248,461
+Position=834,386,849,406
 Item=BI_CIVIL_STATUS,INHABITANT_DICT
 UseEnterKey=Yes
 FieldLabelType=DictionaryLabel
@@ -676,77 +690,83 @@ DataCaptureType=DropDown
 Form=2
   
 [Text]
-Position=45,444,116,460
+Position=744,391,815,407
 Text=Civil Status
  
   
 [Field]
 Name=BI_RELIGION
-Position=233,465,276,485
+Position=229,424,580,444
 Item=BI_RELIGION,INHABITANT_DICT
 UseEnterKey=Yes
+UpperCase=Yes
 FieldLabelType=DictionaryLabel
 Form=2
   
 [Text]
-Position=46,476,99,492
+Position=45,435,98,451
 Text=Religion
  
   
 [Field]
-Name=BI_ETHINICITY
-Position=232,494,247,514
-Item=BI_ETHINICITY,INHABITANT_DICT
+Name=BI_ETHNICITY
+Position=230,454,581,474
+Item=BI_ETHNICITY,INHABITANT_DICT
 UseEnterKey=Yes
+UpperCase=Yes
 FieldLabelType=DictionaryLabel
+DataCaptureType=DropDown
 Form=2
   
 [Text]
-Position=44,500,102,516
-Text=Ethinicity
- 
-  
-[Field]
-Name=BI_EDUCATION
-Position=543,389,572,409
-Item=BI_EDUCATION,INHABITANT_DICT
-UseEnterKey=Yes
-Form=2
-  
-[Text]
-Position=355,387,491,419
-Text=Highest Level of \nEducation Completed
+Position=44,458,98,474
+Text=Ethnicity
  
   
 [Field]
 Name=BI_OCCUPATION
-Position=546,421,575,441
+Position=230,486,581,506
 Item=BI_OCCUPATION,INHABITANT_DICT
 UseEnterKey=Yes
+UpperCase=Yes
 FieldLabelType=DictionaryLabel
 Form=2
   
 [Text]
-Position=356,429,428,445
+Position=44,494,116,510
 Text=Occupation
  
   
 [Field]
-Name=BI_DISABILITY
-Position=549,450,564,470
-Item=BI_DISABILITY,INHABITANT_DICT
+Name=BI_EDUCATION
+Position=834,426,863,446
+Item=BI_EDUCATION,INHABITANT_DICT
 UseEnterKey=Yes
-FieldLabelType=DictionaryLabel
+DataCaptureType=DropDown
 Form=2
   
 [Text]
-Position=358,453,416,469
+Position=641,425,777,457
+Text=Highest Level of \nEducation Completed
+ 
+  
+[Field]
+Name=BI_DISABILITY
+Position=834,461,877,481
+Item=BI_DISABILITY,INHABITANT_DICT
+UseEnterKey=Yes
+FieldLabelType=DictionaryLabel
+DataCaptureType=CheckBox
+Form=2
+  
+[Text]
+Position=643,464,701,480
 Text=Disability
  
   
 [Field]
 Name=BI_RELATIONSHIP
-Position=549,480,578,500
+Position=834,491,863,511
 Item=BI_RELATIONSHIP,INHABITANT_DICT
 UseEnterKey=Yes
 FieldLabelType=DictionaryLabel
@@ -754,13 +774,13 @@ DataCaptureType=DropDown
 Form=2
   
 [Text]
-Position=361,483,527,499
+Position=646,494,812,510
 Text=Relationship to Household
  
   
 [Field]
 Name=ADD_HOUSEHOLD_MEMBER
-Position=549,510,564,530
+Position=834,521,849,541
 Item=ADD_HOUSEHOLD_MEMBER,INHABITANT_DICT
 UseEnterKey=Yes
 FieldLabelType=DictionaryLabel
@@ -768,7 +788,7 @@ DataCaptureType=DropDown
 Form=2
   
 [Text]
-Position=360,513,512,529
+Position=645,524,797,540
 Text=Add Household Member
  
 [EndGroup]

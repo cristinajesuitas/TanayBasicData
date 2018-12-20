@@ -1,0 +1,30 @@
+﻿Application     C:\Users\Cristina\Dropbox (Old)\TanayLMIS\LMIS\TanayBasicData\TanayBasicData.ent.apc
+Type            ENTRY
+Date            Dec 10, 2018
+Time            15:56:20
+
+CSPRO Error Summary
+
+E 10011 Error 544: Dictionary name expected near line 17 in BI_PROVINCE 
+procedure 
+
+E 10011 Error 544: Dictionary name expected near line 18 in BI_MUNICIPAL 
+procedure 
+
+E 10011 Error 544: Dictionary name expected near line 17 in BI_BARANGAY 
+procedure 
+
+E 10011 Error 544: Dictionary name expected near line 18 in BI_EA procedure 
+
+E 10011 Error 544: Dictionary name expected near line 15 in BI_COUNTRY 
+procedure 
+
+E 10011 Error 544: Dictionary name expected near line 17 in BI_PROVINCE_BIRTH 
+procedure 
+
+E 10011 Error 544: Dictionary name expected near line 17 in BI_MUNICIPAL_BIRTH 
+procedure 
+
+A 10010 15 syntax errors detected 
+
+... ending at 15:56:20

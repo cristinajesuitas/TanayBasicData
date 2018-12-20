@@ -41,15 +41,6 @@ EN=\pard\cf1\fs24 When was\cf2\b  %BI_FNAME%\cf1\b0  was born MM/DD/YYYY?\par
 EN=}
 
 [QUESTION]
-Field=INHABITANT_DICT.BI_DISABILITY
-Occurrences=1:10
-EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang13321{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-EN={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
-EN={\*\generator Riched20 10.0.17134}\viewkind4\uc1
-EN=\pard\cf1\fs24 Does \cf2\b %BI_FNAME%\cf1\b0  have any disability?  What is %SexPronoun% disability?\par
-EN=}
-
-[QUESTION]
 Field=INHABITANT_DICT.BI_EDUCATION
 Occurrences=1:10
 EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang13321{\fonttbl{\f0\fnil\fcharset0 Arial;}}
@@ -60,6 +51,15 @@ EN=}
 
 [QUESTION]
 Field=INHABITANT_DICT.BI_ETHINICITY
+Occurrences=1:10
+EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang13321{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+EN={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+EN={\*\generator Riched20 10.0.17134}\viewkind4\uc1
+EN=\pard\cf1\fs24 Is \cf2\b %BI_FNAME%\cf1\b0  Tagalog, Bicolano, Bisaya, Muslim, etc?\par
+EN=}
+
+[QUESTION]
+Field=INHABITANT_DICT.BI_ETHNICITY
 Occurrences=1:10
 EN={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang13321{\fonttbl{\f0\fnil\fcharset0 Arial;}}
 EN={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}

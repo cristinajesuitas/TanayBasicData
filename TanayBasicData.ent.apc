@@ -26,13 +26,12 @@ GEO_PROVINCE = 1;
 GEO_MUNICIPAL = notappl;
 GEO_BARANGAY = notappl;
 GEO_EA = notappl;
-GEO_BGY_CLASS = notappl;
 
 // Loop through all PROVINCE in selected REGION starting with PROVINCE 1
 // The call to locate finds the next case whose ids match or are greater than the desired PROVINCE. If the PROVINCES are
 // numbered sequentially with no gaps then this will be an exact match but if there are gaps then it will skip
 // over them.
-while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%ds", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA, GEO_BGY_CLASS)) and loadcase(GEOCODE_DICT) do
+while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA)) and loadcase(GEOCODE_DICT) do
 
 	if GEO_REGION <> BI_REGION then
 		// The next case is in a different REGION so there are no more PROVINCE in this REGION
@@ -42,13 +41,13 @@ while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%ds", GEO_REGION, G
 	
 	// If the structure of the lookup file is correct, we should be on a case for a PROVINCE meaning that
 	// the PROVINCE is not blank, the MUNICIPAL, BARANGAY and EA are blank.
-	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL = notappl and GEO_BARANGAY = notappl and GEO_EA = notappl and GEO_BGY_CLASS = notappl then
+	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL = notappl and GEO_BARANGAY = notappl and GEO_EA = notappl then
 		// Add the PROVINCE to the value set
 		labels(nextEntry) = GEO_AREA_NAME;
 		codes(nextEntry) = GEO_PROVINCE;
 		nextEntry = nextEntry + 1;
 	else
-		errmsg("Geo code lookup has invalid structure on line: reg=%02d prov=%02d mun=%02d bgy=%03d ea=%03d class=%d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA,GEO_BGY_CLASS);
+		errmsg("Geo code lookup has invalid structure on line: reg=%02d prov=%02d mun=%02d bgy=%03d ea=%03d ", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA);
 		exit;
 	endif;
 	
@@ -73,13 +72,13 @@ GEO_PROVINCE = BI_PROVINCE;
 GEO_MUNICIPAL = 1;
 GEO_BARANGAY = notappl;
 GEO_EA = notappl;
-GEO_BGY_CLASS = notappl;
+
 
 // Loop through all MUNICIPALS in selected PROVINCE in the selected REGION starting with MUNICIPAL 1
 // The call to locate finds the next case whose ids match or are greater than the desired MUNICIPAL. If the districts are
 // numbered sequentially with no gaps then this will be an exact match but if there are gaps then it will skip
 // over them.
-while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA, GEO_BGY_CLASS)) and loadcase(GEOCODE_DICT) do
+while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA)) and loadcase(GEOCODE_DICT) do
 
 	if GEO_REGION <> BI_REGION or GEO_PROVINCE <> BI_PROVINCE then
 		// The next case is in a different REGION or in a different PROVINCE so there are no more MUNICIPALS in this PROVINCE or in this REGION
@@ -89,7 +88,7 @@ while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%d", GEO_REGION, GE
 	
 	// If the structure of the lookup file is correct, we should be on a case for a MUNICIPAL meaning that
 	// the REGION and PROVINCE are not blank and the village is blank.
-	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL <> notappl and GEO_BARANGAY = notappl  and GEO_EA = notappl and  GEO_BGY_CLASS = notappl then
+	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL <> notappl and GEO_BARANGAY = notappl  and GEO_EA = notappl then
 		// Add the district to the value set
 		labels(nextEntry) = GEO_AREA_NAME;
 		codes(nextEntry) = GEO_MUNICIPAL;
@@ -120,13 +119,12 @@ GEO_PROVINCE = BI_PROVINCE;
 GEO_MUNICIPAL = BI_MUNICIPAL;
 GEO_BARANGAY = 1;
 GEO_EA = notappl;
-GEO_BGY_CLASS = notappl;
 
 // Loop through all BARANGAYS in selected MUNICIPAL in the PROVINCE in the selected REGION starting with BARANGAY 1
 // The call to locate finds the next case whose ids match or are greater than the desired MUNICIPAL. If the districts are
 // numbered sequentially with no gaps then this will be an exact match but if there are gaps then it will skip
 // over them.
-while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA,GEO_BGY_CLASS)) and loadcase(GEOCODE_DICT) do
+while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA)) and loadcase(GEOCODE_DICT) do
 
 	if GEO_REGION <> BI_REGION or GEO_PROVINCE <> BI_PROVINCE or GEO_MUNICIPAL <> BI_MUNICIPAL then
 		// The next case is in a different REGION or in a different PROVINCE so there are no more MUNICIPALS in this PROVINCE or in this REGION
@@ -136,7 +134,7 @@ while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%d", GEO_REGION, GE
 	
 	// If the structure of the lookup file is correct, we should be on a case for a MUNICIPAL meaning that
 	// the REGION and PROVINCE are not blank and the village is blank.
-	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL <> notappl and GEO_BARANGAY <> notappl and GEO_EA = notappl and GEO_BGY_CLASS = notappl then
+	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL <> notappl and GEO_BARANGAY <> notappl and GEO_EA = notappl then
 		// Add the district to the value set
 		labels(nextEntry) = GEO_AREA_NAME;
 		codes(nextEntry) = GEO_BARANGAY;
@@ -169,13 +167,13 @@ GEO_PROVINCE = BI_PROVINCE;
 GEO_MUNICIPAL = BI_MUNICIPAL;
 GEO_BARANGAY = BI_BARANGAY;
 GEO_EA = 1;
-GEO_BGY_CLASS = notappl;
+
 
 // Loop through all BARANGAYS in selected MUNICIPAL in the PROVINCE in the selected REGION starting with BARANGAY 1
 // The call to locate finds the next case whose ids match or are greater than the desired MUNICIPAL. If the districts are
 // numbered sequentially with no gaps then this will be an exact match but if there are gaps then it will skip
 // over them.
-while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA, GEO_BGY_CLASS)) and loadcase(GEOCODE_DICT) do
+while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d", GEO_REGION, GEO_PROVINCE, GEO_MUNICIPAL, GEO_BARANGAY, GEO_EA)) and loadcase(GEOCODE_DICT) do
 
 	if GEO_REGION <> BI_REGION or GEO_PROVINCE <> BI_PROVINCE or GEO_MUNICIPAL <> BI_MUNICIPAL or GEO_BARANGAY <> BI_BARANGAY then
 		// The next case is in a different REGION or in a different PROVINCE so there are no more MUNICIPALS in this PROVINCE or in this REGION
@@ -185,7 +183,7 @@ while locate(GEOCODE_DICT, >=, maketext("%02d%02d%02d%03d%03d%d", GEO_REGION, GE
 	
 	// If the structure of the lookup file is correct, we should be on a case for a MUNICIPAL meaning that
 	// the REGION and PROVINCE are not blank and the village is blank.
-	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL <> notappl and GEO_BARANGAY <> notappl and GEO_EA <> notappl and GEO_BGY_CLASS = notappl then
+	if GEO_PROVINCE <> notappl and GEO_MUNICIPAL <> notappl and GEO_BARANGAY <> notappl and GEO_EA <> notappl then
 		// Add the district to the value set
 		labels(nextEntry) = GEO_AREA_NAME;
 		codes(nextEntry) = GEO_EA;
@@ -204,7 +202,7 @@ codes(nextEntry) = notappl;
 
 setvalueset(BI_EA, codes, labels);
 
-PROC BI_BGY_CLASS
+{PROC BI_BGY_CLASS
 onfocus
 
 // Build dynamic value set for selected REGION and PROVINCE and MUNICIPAL based on BARANGAYS in lookup file
@@ -249,7 +247,7 @@ enddo;
 // Add terminator to value set
 codes(nextEntry) = notappl;
 
-setvalueset(BI_BGY_CLASS, codes, labels);
+setvalueset(BI_BGY_CLASS, codes, labels);}
 
 
 
@@ -278,6 +276,12 @@ if curocc() = 1 then
     setcaselabel(INHABITANT_DICT, caseLabel); 
 endif;
 
+{PROC BI_AGE
+
+preproc
+	$=datediff(DATE_OF_INTERVIEW,BI_DATE_OF_BIRTH,"y");}
+
+			
 PROC BI_COUNTRY
 
 onfocus
@@ -422,6 +426,18 @@ codes(nextEntry) = notappl;
 setvalueset(BI_MUNICIPAL_BIRTH, codes, labels);
 
 
+PROC BI_NATIONALITY
+
+PROC BI_OTHER_NATIONALITY
+preproc
+ask if BI_NATIONALITY = 2;
+PROC BI_CIVIL_STATUS
+
+ 	if BI_AGE < 18 and $ <> 1 then
+		errmsg ("%s is too young to get %s",strip(BI_FNAME), getlabel(BI_CIVIL_STATUS,BI_CIVIL_STATUS));
+		reenter;
+			endif;
+
 PROC BI_RELATIONSHIP
 	
 onfocus 
@@ -432,14 +448,6 @@ onfocus
     	setvalueset(BI_RELATIONSHIP, BI_RELATIONSHIP_FEMALE); 
 	endif;
  
-postproc
- 
- 	if BI_CIVIL_STATUS = 2 and $ = 2 then
-		errmsg ("%s has relationship spouse and marital status %s.  Spouse cannot be single, widowed, separated",
-		strip(BI_NAME(curocc())), getlabel(BI_CIVIL_STATUS))
-			select ("Please choose the right Civil Status",BI_CIVIL_STATUS,
-			"Please choose the right Relationship to Household Head", BI_RELATIONSHIP);
-	endif;
 PROC ADD_HOUSEHOLD_MEMBER
 // Exit roster when no more people in household 
 	if $ = 2 then
